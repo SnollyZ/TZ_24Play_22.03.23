@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     public void Jump(Vector3 topCubePos){
         Vector3 point = new Vector3(topCubePos.x, topCubePos.y + JUMP_HEIGHT, topCubePos.z);
         stickman.transform.position = point;
+        StickmanFixPosition();
         animator.SetTrigger("Jump");
     }
 
@@ -56,5 +57,11 @@ public class Player : MonoBehaviour
 
     private void StopMove(){
         rigidbody.constraints = RigidbodyConstraints.FreezePosition;
+    }
+
+    private void StickmanFixPosition(){
+        Transform stickmanTransform = stickman.transform;
+        Vector3 newPosition = new Vector3(0, stickmanTransform.localPosition.y, 0);
+        stickmanTransform.localPosition = newPosition;
     }
 }

@@ -11,7 +11,8 @@ public class TowerManager : MonoBehaviour
     [SerializeField]private CollectCubeText collectCubeText;
     [SerializeField]private List<Transform> cubesTransform;
     [SerializeField]private List<Cube> cubes;
-    [SerializeField]private float moveSpeed = 10f;
+    [SerializeField]private float moveSpeedZ = 10f;
+    [SerializeField]private float moveSpeedX = 10f;
 
     private void Awake() {
         if(instance == null){
@@ -44,7 +45,7 @@ public class TowerManager : MonoBehaviour
     }
 
     public void MoveTower(float direction){
-        Vector3 playerMoveDirection = new Vector3(direction * moveSpeed, player.transform.position.y, -moveSpeed);
+        Vector3 playerMoveDirection = new Vector3(direction * moveSpeedX, player.transform.position.y, -moveSpeedZ);
         player.MovePlayer(playerMoveDirection);
         foreach (var cube in cubes){
             cube.MoveCube(player.transform);

@@ -42,6 +42,7 @@ public class LevelGenerator : MonoBehaviour
             trackTransform.position = new Vector3(trackPos.x, newPositionY, trackPos.z);
             yield return null;
         }
+        trackTransform.position = new Vector3(trackPos.x, dir, trackPos.z);
         yield break;
     }
 

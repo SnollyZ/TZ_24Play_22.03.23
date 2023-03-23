@@ -1476,7 +1476,8 @@ MonoBehaviour:
   - {fileID: 801604201}
   cubes:
   - {fileID: 801604204}
-  moveSpeed: 13
+  moveSpeedZ: 13
+  moveSpeedX: 3
 --- !u!4 &992642188
 Transform:
   m_ObjectHideFlags: 0
